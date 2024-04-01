@@ -1,15 +1,28 @@
 const mongoose = require('mongoose');
 
 // Connect to MongoDB
-mongoose.connect('your-mongodb-url');
+mongoose.connect('mongodb+srv://praneethdevarasetty31:8qgJLzdzAjMvKssx@cluster0.myjyejx.mongodb.net/?retryWrites=true&w=majority').then(()=>{
+  console.log("Connected to MongoDB");
+});
 
 // Define schemas
 const AdminSchema = new mongoose.Schema({
-    // Schema definition here
+    userName :{
+      type: String,
+      required: true
+    },
+    password:{
+      type: String,
+      required: true,
+    }
+    
 });
 
 const UserSchema = new mongoose.Schema({
-    // Schema definition here
+    username:{
+      type:string,
+      required:true
+    }
 });
 
 const CourseSchema = new mongoose.Schema({
